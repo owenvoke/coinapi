@@ -32,7 +32,7 @@ class Metadata
     /**
      * Retrieve a detailed list of all symbols.
      *
-     * @param array $filterSymbolIds
+     * @param string[] $filterSymbolIds
      * @return array
      */
     public function getSymbols(array $filterSymbolIds = []): array
