@@ -12,7 +12,7 @@ class Metadata
     /**
      * Retrieve a detailed list of all exchanges.
      *
-     * @return array
+     * @return \stdClass[]
      */
     public function getExchanges(): array
     {
@@ -22,7 +22,7 @@ class Metadata
     /**
      * Retrieve a detailed list of all assets.
      *
-     * @return array
+     * @return \stdClass[]
      */
     public function getAssets(): array
     {
@@ -33,7 +33,7 @@ class Metadata
      * Retrieve a detailed list of all symbols.
      *
      * @param string[] $filterSymbolIds
-     * @return array
+     * @return \stdClass[]
      */
     public function getSymbols(array $filterSymbolIds = []): array
     {
