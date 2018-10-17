@@ -35,18 +35,20 @@ trait ApiCallable
                 'Content-Type'  => 'application/json',
             ],
         ]);
-    }
+    }  
 
     /**
      * @param string $endpoint
      *
      * @return mixed
      */
-    public function call(string $endpoint)
+    public function call(string $endpoint, array $query = [])
     {
         return \GuzzleHttp\json_decode(
             $this->client
-                ->get($endpoint)
+                ->request('GET', $endpoint, [
+                    'query' => $query
+                ])
                 ->getBody()
                 ->getContents()
         );
