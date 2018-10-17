@@ -35,7 +35,7 @@ trait ApiCallable
                 'Content-Type'  => 'application/json',
             ],
         ]);
-    }  
+    }
 
     /**
      * @param string $endpoint
