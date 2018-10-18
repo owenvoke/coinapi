@@ -41,6 +41,6 @@ class Metadata
             'filter_symbol_id' => implode(';', $filterSymbolIds),
         ];
 
-        return $this->call('symbols?'.http_build_query($data));
+        return $this->call('symbols', $data);
     }
 }

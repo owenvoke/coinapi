@@ -40,8 +40,8 @@ class ExchangeRates
         ];
 
         return $this->call(
-            'exchangerate/'.strtoupper($assetIdBase).'/'.strtoupper($assetIdQuote).
-            '?'.http_build_query($data)
+            'exchangerate/'.strtoupper($assetIdBase).'/'.strtoupper($assetIdQuote),
+            $data
         );
     }
 }
