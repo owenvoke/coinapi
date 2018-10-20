@@ -40,4 +40,37 @@ class OHLCV
 
         return $this->call('ohlcv/'.$symbolId.'/latest', $query);
     }
+
+    /**
+     * Get OHLCV timeseries data for requested symbol and period, returned in time ascending order.
+     *
+     * @param string    $symbolId
+     * @param string    $periodId
+     * @param \DateTime $startTime
+     * @param \DateTime $endTime
+     * @param int|null  $limit
+     * @return mixed
+     */
+    public function getHistory(
+        string $symbolId,
+        string $periodId,
+        \DateTime $startTime,
+        \DateTime $endTime,
+        int $limit = null
+    ) {
+        $query = [
+            'period_id'  => $periodId,
+            'time_start' => CoinAPI::formatTimestamp($startTime),
+        ];
+
+        if ($endTime) {
+            $query['time_end'] = CoinAPI::formatTimestamp($endTime);
+        }
+
+        if ($limit) {
+            $query['limit'] = $limit;
+        }
+
+        return $this->call('ohlcv/'.$symbolId.'/history', $query);
+    }
 }
