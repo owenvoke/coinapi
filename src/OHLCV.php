@@ -11,7 +11,7 @@ class OHLCV
     use Traits\ApiCallable;
 
     /**
-     * Get full list of supported time periods available for requesting OHLCV timeseries data.
+     * Retrieve full list of supported time periods available for requesting OHLCV timeseries data.
      *
      * @return \stdClass[]
      */
@@ -21,7 +21,7 @@ class OHLCV
     }
 
     /**
-     * Get OHLCV latest timeseries data for requested symbol and period, returned in time descending order.
+     * Retrieve OHLCV latest timeseries data for requested symbol and period, returned in time descending order.
      *
      * @param string   $symbolId
      * @param string   $periodId
@@ -42,7 +42,7 @@ class OHLCV
     }
 
     /**
-     * Get OHLCV timeseries data for requested symbol and period, returned in time ascending order.
+     * Retrieve OHLCV timeseries data for requested symbol and period, returned in time ascending order.
      *
      * @param string    $symbolId
      * @param string    $periodId
