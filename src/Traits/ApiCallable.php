@@ -39,15 +39,15 @@ trait ApiCallable
 
     /**
      * @param string $endpoint
-     *
+     * @param array  $query
      * @return mixed
      */
     public function call(string $endpoint, array $query = [])
     {
         return \GuzzleHttp\json_decode(
             $this->client
-                ->request('GET', $endpoint, [
-                    'query' => $query
+                ->get($endpoint, [
+                    'query' => $query,
                 ])
                 ->getBody()
                 ->getContents()
