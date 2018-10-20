@@ -26,9 +26,9 @@ class OHLCV
      * @param string   $symbolId
      * @param string   $periodId
      * @param int|null $limit
-     * @return mixed
+     * @return \stdClass[]
      */
-    public function getLatest(string $symbolId, string $periodId, int $limit = null)
+    public function getLatest(string $symbolId, string $periodId, int $limit = null): array
     {
         $query = [
             'period_id' => $periodId,
@@ -49,7 +49,7 @@ class OHLCV
      * @param \DateTime $startTime
      * @param \DateTime $endTime
      * @param int|null  $limit
-     * @return mixed
+     * @return \stdClass[]
      */
     public function getHistory(
         string $symbolId,
@@ -57,7 +57,7 @@ class OHLCV
         \DateTime $startTime,
         \DateTime $endTime,
         int $limit = null
-    ) {
+    ): array {
         $query = [
             'period_id'  => $periodId,
             'time_start' => CoinAPI::formatTimestamp($startTime),
