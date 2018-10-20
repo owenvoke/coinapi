@@ -44,18 +44,18 @@ class OHLCV
     /**
      * Retrieve OHLCV timeseries data for requested symbol and period, returned in time ascending order.
      *
-     * @param string    $symbolId
-     * @param string    $periodId
-     * @param \DateTime $startTime
-     * @param \DateTime $endTime
-     * @param int|null  $limit
+     * @param string         $symbolId
+     * @param string         $periodId
+     * @param \DateTime      $startTime
+     * @param \DateTime|null $endTime
+     * @param int|null       $limit
      * @return \stdClass[]
      */
     public function getHistory(
         string $symbolId,
         string $periodId,
         \DateTime $startTime,
-        \DateTime $endTime,
+        \DateTime $endTime = null,
         int $limit = null
     ): array {
         $query = [
