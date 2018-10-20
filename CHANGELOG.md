@@ -4,19 +4,7 @@ All notable changes to `coinapi` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) principles.
 
-## NEXT - YYYY-MM-DD
+## v1.0.0 - 2018-10-20
 
 ### Added
-- Nothing
-
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
+- Initial release
