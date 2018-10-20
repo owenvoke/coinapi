@@ -56,7 +56,7 @@ class Trades
      * @param \DateTime      $startTime
      * @param \DateTime|null $endTime
      * @param int|null       $limit
-     * @return array
+     * @return \stdClass[]
      */
     public function getHistory(
         string $symbolId,
