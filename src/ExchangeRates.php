@@ -18,11 +18,11 @@ class ExchangeRates
      */
     public function getExchangeRates(string $assetIdBase, array $filterAssetIds = []): \stdClass
     {
-        $data = [
-            'filter_symbol_id' => implode(';', $filterAssetIds),
+        $query = [
+            'filter_asset_id' => implode(';', $filterAssetIds),
         ];
 
-        return $this->call('exchangerate/'.strtoupper($assetIdBase).'?'.http_build_query($data));
+        return $this->call('exchangerate/'.strtoupper($assetIdBase), $query);
     }
 
     /**
@@ -35,13 +35,13 @@ class ExchangeRates
      */
     public function getExchangeRate(string $assetIdBase, string $assetIdQuote, string $time = null): \stdClass
     {
-        $data = [
+        $query = [
             'time' => $time,
         ];
 
         return $this->call(
             'exchangerate/'.strtoupper($assetIdBase).'/'.strtoupper($assetIdQuote),
-            $data
+            $query
         );
     }
 }
